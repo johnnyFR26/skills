@@ -10,9 +10,7 @@ description: >
   Também use para análise exploratória de dados (EDA), pipelines de ML, MLOps básico,
   seleção de algoritmos, tuning de hiperparâmetros, ou quando o usuário quiser "prever",
   "classificar", "detectar anomalias" ou "recomendar" algo com base em dados históricos.
-compatibility:
-  python: ">=3.9"
-  tools: [bash_tool, create_file, present_files]
+compatibility: "Requires Python >=3.9 and bash/file-creation tools"
 ---
 
 # Machine Learning Development Skill

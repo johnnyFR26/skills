@@ -8,9 +8,7 @@ description: >
   "fechar issue", "revisar PR", "etiquetar", "milestone", "project board", "gh issue", "gh pr", "gh project",
   or any request to organize, track, or govern work via GitHub.
 argument-hint: "[issue | pr | project | triage | label | milestone]"
-compatibility:
-  tools: [bash_tool]
-  requires: "gh CLI authenticated (`gh auth status`)"
+compatibility: "Requires bash tool and gh CLI authenticated (gh auth status)"
 ---
 
 # GitHub Manager
