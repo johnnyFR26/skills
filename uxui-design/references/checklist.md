@@ -38,6 +38,45 @@ Use this checklist before finalizing any design. Every item maps to at least one
 
 ---
 
+## 3b. M3 Styles Compliance
+
+### Color
+- [ ] Colors use **semantic roles** (`primary`, `onPrimary`, `primaryContainer`) — no hardcoded hex *(M3 Color)*
+- [ ] Both **light and dark themes** are supported with correct surface mappings *(M3 Color)*
+- [ ] Container/onContainer pairs maintain proper **contrast ratios** *(M3 Color)*
+- [ ] **Error** color is used for error states, **not primary red** *(M3 Color)*
+- [ ] Dynamic color is considered for Android consumer apps *(M3 Color)*
+
+### Typography
+- [ ] Content uses **M3 type roles** (Display, Headline, Title, Body, Label) — not arbitrary sizes *(M3 Typography)*
+- [ ] Type roles match **semantic purpose**: Display/Headline for emphasis, Body for reading, Label for actions *(M3 Typography)*
+- [ ] Body text is **≥14sp** with line height **1.4–1.6×** *(M3 Typography)*
+- [ ] Emphasized variants are used sparingly for **differentiation within the same role** *(M3 Typography)*
+
+### Elevation
+- [ ] Elevation uses **tonal surface overlays**, not drop shadows as primary cue *(M3 Elevation)*
+- [ ] Resting components use levels **0–3**, interactive states use levels **4–5** *(M3 Elevation)*
+- [ ] Disabled elements have **no elevation** (Level 0) *(M3 Elevation)*
+
+### Shape
+- [ ] Corner radii use the **M3 shape scale** (None, Extra Small, Small, Medium, Large, Extra Large, Full) *(M3 Shape)*
+- [ ] Shape language is **consistent** — same hierarchy level uses same shape style *(M3 Shape)*
+- [ ] Shape morph is considered for **interaction states and loading feedback** *(M3 Shape)*
+
+### Motion
+- [ ] Animations use **spring physics** (Expressive or Standard scheme) *(M3 Motion)*
+- [ ] Correct **transition pattern** is used: Container Transform (parent-child), Shared Axis (navigation), Fade Through (unrelated) *(M3 Motion)*
+- [ ] UI animations are **under 500ms** *(M3 Motion)*
+- [ ] `prefers-reduced-motion` is respected *(M3 Motion + Accessibility)*
+
+### Icons
+- [ ] Icons use **Material Symbols** with correct style (outlined, rounded, or sharp) *(M3 Icons)*
+- [ ] Icon **weight matches companion text weight** *(M3 Icons)*
+- [ ] Active/selected states use **Fill=1**, default states use **Fill=0** *(M3 Icons)*
+- [ ] Icon-only interactive elements have **accessible labels** (`aria-label`) *(M3 Icons + Accessibility)*
+
+---
+
 ## 4. Interaction Design
 
 - [ ] All touch targets are minimum 44×44px *(Fitts's Law)*
@@ -119,15 +158,24 @@ Use this checklist before finalizing any design. Every item maps to at least one
 | No feedback on action | Critical |
 | Touch target < 44px | Critical |
 | Contrast ratio < 4.5:1 | Critical |
+| Hardcoded hex instead of M3 color roles | High |
+| No dark theme support | High |
+| Drop shadows instead of tonal overlays (M3) | High |
 | More than 7 nav items | High |
 | Requiring memory across screens | High |
 | Single screen with > 7 choices | High |
 | No progress on multi-step flows | High |
+| Typography by pixel size, not type role | High |
+| Arbitrary border-radius, not shape scale | Medium |
+| No spring physics for animations | Medium |
+| Wrong transition pattern (e.g., Fade Through for parent-child) | Medium |
+| Icon weight mismatched with text | Medium |
 | No success/empty state | Medium |
 | Unconventional patterns | Medium |
 | No motion reduction support | Medium |
 | Missing alt text | Critical (accessibility) |
 | Form without labels | Critical (accessibility) |
+| Icon-only button without aria-label | Critical (accessibility) |
 
 ---
 
